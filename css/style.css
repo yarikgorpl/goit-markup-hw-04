@@ -289,6 +289,11 @@ ul {
   max-width: 270px;
 }
 .picture {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 270px;
+  height: 120px;
   margin-bottom: 30px;
   background-color: var(--our-command-background-button-portfolio-color);
 }
@@ -402,14 +407,15 @@ ul {
   background-color: var(--accent-color);
 }
 
-.footer-list {
+.footer-style {
   display: flex;
   gap: 70px;
+  align-items: baseline;
 }
 .footer-social {
   margin-top: 12px;
 }
-.footer-social-title {
+.footer-social-text {
   display: flex;
   text-transform: uppercase;
   color: var(--hero-footer-text-color);
@@ -420,7 +426,6 @@ ul {
   margin-top: 0;
   margin-bottom: 20px;
   padding: 0;
-  justify-content: center;
 }
 .footer-social-list {
   display: flex;
@@ -435,7 +440,7 @@ ul {
   width: 44px;
   height: 44px;
   fill: var(--hero-footer-text-color);
-  background-color: var(--contact-footer-text-color);
+  background-color: var(--footer-social-background-color);
   border-radius: 50%;
 }
 .footer-social-item:hover,
@@ -460,15 +465,21 @@ ul {
 }
 .clients-list {
   display: flex;
-  justify-content: center;
   gap: 30px;
+}
+.clients-item {
+  width: 170px;
+  height: 92px;
 }
 .clients-logo {
   display: flex;
-  padding: 16px 32px;
   fill: var(--color-social-link-and-clients);
   border: 1px solid var(--color-social-link-and-clients);
   border-radius: 4px;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
 }
 .clients-logo:hover,
 .clients-logo:focus {
@@ -510,8 +521,8 @@ ul {
 .btn:focus {
   color: var(--hero-footer-text-color);
   background-color: var(--accent-color);
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 25%), 0 4px 4px rgba(0, 0, 0, 25%),
-    0 4px 4px rgba(0, 0, 0, 25%);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 /* Стилізація списку прикладів робіт */
 .card {
@@ -525,10 +536,7 @@ ul {
   margin-top: var(--card-set-gap);
   margin-left: var(--card-set-gap);
 }
-.card-item:hover {
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-    1px 4px 6px rgba(0, 0, 0, 0.16);
-}
+
 .card-description {
   border: 1px solid var(--portfolio-background-color);
   border-top: none;
@@ -556,9 +564,12 @@ ul {
   margin-top: 0px;
 }
 .card .card-link {
+  display: block;
   text-decoration: none;
 }
 .card .card-link :hover,
 .card .card-link :focus {
   color: var(--accent-color);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
