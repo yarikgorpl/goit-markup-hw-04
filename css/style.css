@@ -8,6 +8,8 @@
 /*колір фону героя та футера #2F303A;*/
 /*колір фону портфоліо #EEEEEE;*/
 /*колір соцмереж та клієнтів #AFB1B8;*/
+/*колір бекграунду соцмереж футера #ffffff10;*/
+/*колір бекграунду героя ##2F303A40;*/
 hnml {
   box-sizing: border-box;
 }
@@ -30,6 +32,8 @@ hnml {
   --header-color: #ececec;
   --hero-button-active: #188ce8;
   --color-social-link-and-clients: #afb1b8;
+  --footer-social-background-color: #ffffff10;
+  --hero-background-color: #2f303a40;
   --card-set-gap: 30px;
 }
 /* Стиль переважного тексту */
@@ -117,6 +121,8 @@ ul {
 }
 .contact-up-link {
   display: flex;
+  align-items: center;
+  fill: var(--primary-text-color);
   color: var(--primary-text-color);
   font-weight: 500;
   font-size: 14px;
@@ -124,15 +130,14 @@ ul {
   letter-spacing: 0.02em;
   text-decoration: none;
   padding: 32px 0px;
+  gap: 10px;
 }
 .contact-up-link:hover,
 .contact-up-link:focus {
   color: var(--accent-color);
+  fill: var(--accent-color);
 }
-.env {
-  display: block;
-  margin-right: 10px;
-}
+
 /*Стилізація футеру  */
 .footer {
   background-color: var(--hero-footer-background-color);
@@ -198,7 +203,13 @@ ul {
 .hero {
   background-color: var(--hero-footer-background-color);
   padding: 200px 0px;
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    url(../image/hero.jpg);
 }
+
 .hero-title {
   margin-top: 0;
   margin-bottom: 30px;
@@ -254,7 +265,7 @@ ul {
 }
 .preference-list {
   display: flex;
-  justify-items: center;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 30px;
 }
@@ -321,11 +332,14 @@ ul {
   margin-top: calc(-1 * var(--card-set-gap));
   margin-left: calc(-1 * var(--card-set-gap));
 }
-
 .command-item {
   width: calc(100% / 4 - var(--card-set-gap));
   margin-top: var(--card-set-gap);
   margin-left: var(--card-set-gap);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
+  overflow: hidden;
 }
 .comand-image {
   display: block;
@@ -369,13 +383,67 @@ ul {
 }
 .social-list {
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
   gap: 10px;
-  fill: #afb1b8;
 }
 .social {
-  fill: #afb1b8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  fill: var(--color-social-link-and-clients);
+  background-color: var(--hero-footer-text-color);
+  border-radius: 50%;
 }
+.social:hover,
+.social:focus {
+  fill: var(--hero-footer-text-color);
+  background-color: var(--accent-color);
+}
+
+.footer-list {
+  display: flex;
+  gap: 70px;
+}
+.footer-social {
+  margin-top: 12px;
+}
+.footer-social-title {
+  display: flex;
+  text-transform: uppercase;
+  color: var(--hero-footer-text-color);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  margin-top: 0;
+  margin-bottom: 20px;
+  padding: 0;
+  justify-content: center;
+}
+.footer-social-list {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+}
+.footer-social-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  fill: var(--hero-footer-text-color);
+  background-color: var(--contact-footer-text-color);
+  border-radius: 50%;
+}
+.footer-social-item:hover,
+.footer-social-item:focus {
+  fill: var(--hero-footer-text-color);
+  background-color: var(--accent-color);
+}
+
 .clients {
   padding: 94px 0;
 }
@@ -399,10 +467,13 @@ ul {
   display: flex;
   padding: 16px 32px;
   fill: var(--color-social-link-and-clients);
-}
-.clients-border {
   border: 1px solid var(--color-social-link-and-clients);
   border-radius: 4px;
+}
+.clients-logo:hover,
+.clients-logo:focus {
+  fill: var(--accent-color);
+  border-color: var(--accent-color);
 }
 /* Portfolio */
 .example {
@@ -453,6 +524,10 @@ ul {
   width: calc(100% / 3 - var(--card-set-gap));
   margin-top: var(--card-set-gap);
   margin-left: var(--card-set-gap);
+}
+.card-item:hover {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 .card-description {
   border: 1px solid var(--portfolio-background-color);
