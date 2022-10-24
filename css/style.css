@@ -35,6 +35,7 @@ hnml {
   --footer-social-background-color: #ffffff10;
   --hero-background-color: #2f303a40;
   --card-set-gap: 30px;
+  --portfolio-hover-card-background-color: #2196f3e6;
 }
 /* Стиль переважного тексту */
 body {
@@ -75,6 +76,9 @@ ul {
   text-decoration: none;
   padding-bottom: 24px;
   padding-top: 24px;
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .startlogo {
   color: var(--accent-color);
@@ -92,6 +96,9 @@ ul {
   letter-spacing: 0.02em;
   text-decoration: none;
   padding: 32px 0px;
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .site-nav .link-current {
   display: block;
@@ -102,6 +109,20 @@ ul {
   letter-spacing: 0.02em;
   text-decoration: none;
   padding: 32px 0px;
+}
+.line {
+  position: relative;
+}
+.link-current::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  left: 50%;
+  bottom: -1px;
+  background: var(--accent-color);
+  border-radius: 2px;
+  transform: translate(-50%);
 }
 .site-nav {
   display: flex;
@@ -131,6 +152,10 @@ ul {
   text-decoration: none;
   padding: 32px 0px;
   gap: 10px;
+
+  transition-property: color, fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .contact-up-link:hover,
 .contact-up-link:focus {
@@ -153,6 +178,10 @@ ul {
   letter-spacing: 0.03em;
   text-decoration: none;
   margin-bottom: 20px;
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-logo:hover,
 .footer-logo:focus {
@@ -169,6 +198,10 @@ ul {
   line-height: 1.71;
   letter-spacing: 0.03em;
   text-decoration: none;
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .location-mail,
 .location-phone {
@@ -179,6 +212,10 @@ ul {
   line-height: 1.71;
   letter-spacing: 0.03em;
   text-decoration: none;
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .location-map:hover,
 .location-map:focus {
@@ -236,6 +273,9 @@ ul {
   cursor: pointer;
   padding: 10px 32px;
   max-width: 216px;
+  transition-property: color, background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .hero-button:hover,
 .hero-button:focus {
@@ -324,10 +364,37 @@ ul {
   margin-top: var(--card-set-gap);
   margin-left: var(--card-set-gap);
 }
+.txt {
+  position: absolute;
+  margin: 0;
+  bottom: 27px;
+  left: 50%;
+  transform: translate(-50%);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--hero-footer-text-color);
+}
+
+.thumb {
+  position: relative;
+}
+.thumb::before {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 70px;
+  background: rgba(47, 48, 58, 0.8);
+}
 .section-image-view {
   display: block;
   max-width: 100%;
 }
+
 /* Стилізація секції співробітники */
 .command {
   background-color: var(--our-command-background-button-portfolio-color);
@@ -401,6 +468,10 @@ ul {
   fill: var(--color-social-link-and-clients);
   background-color: var(--hero-footer-text-color);
   border-radius: 50%;
+
+  transition-property: color, fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social:hover,
 .social:focus {
@@ -443,6 +514,10 @@ ul {
   fill: var(--hero-footer-text-color);
   background-color: var(--footer-social-background-color);
   border-radius: 50%;
+
+  transition-property: fill, background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-social-item:hover,
 .footer-social-item:focus {
@@ -481,6 +556,10 @@ ul {
   height: 100%;
   align-items: center;
   justify-content: center;
+
+  transition-property: fill, border-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .clients-logo:hover,
 .clients-logo:focus {
@@ -512,6 +591,10 @@ ul {
   border-radius: 4px;
   cursor: pointer;
   padding: 6px 22px;
+
+  transition-property: color, background-color, box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .btn.current {
   color: var(--hero-footer-text-color);
@@ -539,6 +622,32 @@ ul {
   margin-top: var(--card-set-gap);
   margin-left: var(--card-set-gap);
 }
+.pb {
+  position: relative;
+  /* overflow: hidden; */
+}
+.card-thumb {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
+  position: absolute;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--portfolio-hover-card-background-color);
+  color: var(--hero-footer-text-color);
+
+  transform: translateY(100%);
+  transition-property: transform;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-item .card-thumb:hover {
+  transform: translateY(0);
+}
+
 .card .card-link {
   display: block;
   text-decoration: none;
